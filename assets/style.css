@@ -1,0 +1,142 @@
+/*Note- This code is for a demo of ePlay v7. Expect bugs and problems.*/
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; 
+}
+body{
+    transition: background-image 0.5s ease-in-out, background-color 0.5s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#splash-screen {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 9999; 
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+#splash-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#splash-screen.hidden {
+    opacity: 0;
+    pointer-events: none; 
+}
+
+#main-content {
+    display: none;
+    padding: 20px;
+}
+@media (prefers-color-scheme: dark){
+    .sidelogo{
+filter: invert(1);
+}
+.clickerS{
+    background: url(icons/lsettings.png) no-repeat;
+}
+.sideNavOpen{
+    color: #fff;
+}
+}
+@media (prefers-color-scheme: light){
+    .sidelogo{
+filter: invert(0);
+}
+.clickerS{
+    background: url(icons/dsettings.png) no-repeat;
+}
+.sideNavOpen{
+    color: #000;
+}
+}
+.clicker{
+    height: 150px;
+    width: 150px;
+    border: solid;
+    border-radius: 16px;
+    transition: height 0.3s ease, width 0.3s ease, border-radius 0.3s ease, background 0.3s ease;
+    background: url(icons/emall.png) no-repeat;
+    background-size: cover;
+    border: solid;
+    border-radius: 16px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    border-color: #4a4a4aff;
+    cursor: pointer;
+}
+.clickerS{
+    height: 150px;
+    width: 150px;
+    border: solid;
+    border-radius: 16px;
+    transition: height 0.3s ease, width 0.3s ease, border-radius 0.3s ease, background-image 0.3s ease;
+    background-size: cover;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    border-color: #757575ff;
+    cursor: pointer;
+}
+.clicker:hover{
+    height: 200px;
+    width: 300px;
+    border-radius: 32px;
+    background: #000;
+}
+.clickerS:hover{
+    height: 200px;
+    width: 300px;
+    border-radius: 32px;
+    background: #000;
+}
+.errorCode{
+    color: #737373ff;
+    font-size: 12px;
+}
+.sideNavOpen{
+    object-fit: contain;
+}
+.clicker-container{
+  display: flex;
+  margin-top: 50px;
+}
+.clicker, .clickerS {
+    position: relative;
+}
+
+.app-name {
+    transition: opacity 0.3s ease;
+    text-align: center;
+    display: none;
+    opacity: 0;
+    text-decoration: none;
+    color: #fff;
+}
+a{
+    text-decoration: none;
+}
+.clicker:hover .app-name,
+.clickerS:hover .app-name {
+    display: block;
+    text-align: center;
+    opacity: 1;
+}
+.clicker:hover, .clickerS:hover {
+    height: 200px;
+    width: 300px;
+    border-radius: 32px;
+    background: #000;
+    display: flex;
+}
